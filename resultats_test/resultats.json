@@ -1,0 +1,168 @@
+{
+  "effectifs": {
+    "patients": 700,
+    "glaucomes": 233,
+    "apprentissage": 560,
+    "test": 140
+  },
+  "hyperparametres": {
+    "max_depth": 6,
+    "learning_rate": 0.06677334152941172,
+    "n_estimators": 800,
+    "subsample": 0.7209906358478197,
+    "colsample_bytree": 0.6986504967431171,
+    "min_child_weight": 3,
+    "reg_lambda": 8.940884610144998
+  },
+  "AUC_validation_croisee": 0.8179374389051809,
+  "seuils": {
+    "specificite_95": 0.7832287549972534,
+    "specificite_90": 0.6047533750534058,
+    "youden": 0.3003303110599518
+  },
+  "brier_validation_croisee": 0.1610613465309143,
+  "XGBoost": {
+    "AUC": 0.8071379547014413,
+    "AUC_IC95": [
+      0.71691746263733,
+      0.8844444444444444
+    ],
+    "specificite_95": {
+      "sensibilite": 0.5319148936170213,
+      "sensibilite_IC95": [
+        0.39232141926770786,
+        0.6666853783153737
+      ],
+      "specificite": 0.9354838709677419,
+      "specificite_IC95": [
+        0.8663184315371988,
+        0.9700989758579701
+      ]
+    },
+    "specificite_90": {
+      "sensibilite": 0.6170212765957447,
+      "sensibilite_IC95": [
+        0.47426308443976317,
+        0.7420951733648692
+      ],
+      "specificite": 0.8602150537634409,
+      "specificite_IC95": [
+        0.7753978731638328,
+        0.9164535625827884
+      ]
+    },
+    "youden": {
+      "sensibilite": 0.7872340425531915,
+      "sensibilite_IC95": [
+        0.6509569794902073,
+        0.8801041987575269
+      ],
+      "specificite": 0.6559139784946236,
+      "specificite_IC95": [
+        0.5549073090695003,
+        0.7445507750596343
+      ]
+    }
+  },
+  "comparateurs": {
+    "Logistique MD+PSD": {
+      "AUC": 0.8641043239533287,
+      "AUC_IC95": [
+        0.7863017616106154,
+        0.9291230391520402
+      ],
+      "p_DeLong_vs_XGBoost": 0.11532113673602659
+    },
+    "Random forest": {
+      "AUC": 0.8670784717455959,
+      "AUC_IC95": [
+        0.7887623910609086,
+        0.9329237258100085
+      ],
+      "p_DeLong_vs_XGBoost": 0.007190716741038766
+    },
+    "GHT (limite = négatif)": {
+      "sensibilite": 0.2127659574468085,
+      "sensibilite_IC95": [
+        0.11989580124247315,
+        0.34904302050979275
+      ],
+      "specificite": 1.0,
+      "specificite_IC95": [
+        0.9603310973796383,
+        0.9999999999999999
+      ],
+      "p_McNemar_sens_vs_XGBoost_spec95": 0.0014896392822265625
+    },
+    "GHT (limite = positif)": {
+      "sensibilite": 0.5531914893617021,
+      "sensibilite_IC95": [
+        0.41245213738758246,
+        0.685892525250887
+      ],
+      "specificite": 0.9139784946236559,
+      "specificite_IC95": [
+        0.8393453815534051,
+        0.9557674625136072
+      ],
+      "p_McNemar_sens_vs_XGBoost_spec95": 1.0
+    },
+    "lecteur_1": {
+      "sensibilite": 0.7446808510638298,
+      "sensibilite_IC95": [
+        0.604915508600796,
+        0.8474699395361627
+      ],
+      "specificite": 0.8602150537634409,
+      "specificite_IC95": [
+        0.7753978731638328,
+        0.9164535625827884
+      ],
+      "p_McNemar_sens_vs_XGBoost_spec95": 0.06391465663909912,
+      "p_McNemar_spec_vs_XGBoost_spec95": 0.1670684814453125
+    },
+    "lecteur_2": {
+      "sensibilite": 0.7659574468085106,
+      "sensibilite_IC95": [
+        0.6277546774315923,
+        0.8639686357607541
+      ],
+      "specificite": 0.8817204301075269,
+      "specificite_IC95": [
+        0.8004996842701593,
+        0.9326563148046185
+      ],
+      "p_McNemar_sens_vs_XGBoost_spec95": 0.02660369873046875,
+      "p_McNemar_spec_vs_XGBoost_spec95": 0.332305908203125
+    },
+    "lecteur_3": {
+      "sensibilite": 0.9148936170212766,
+      "sensibilite_IC95": [
+        0.8006819480497736,
+        0.9664064205302869
+      ],
+      "specificite": 0.8817204301075269,
+      "specificite_IC95": [
+        0.8004996842701593,
+        0.9326563148046185
+      ],
+      "p_McNemar_sens_vs_XGBoost_spec95": 0.0002771615982055664,
+      "p_McNemar_spec_vs_XGBoost_spec95": 0.30175781249999994
+    }
+  },
+  "kappa_fleiss_lecteurs": 0.39671611481215474,
+  "modele_secondaire": {
+    "variables_ajoutees": [
+      "age",
+      "sexe_f",
+      "atcd_familial",
+      "pachymetrie"
+    ],
+    "AUC": 0.8087394188972775,
+    "AUC_IC95": [
+      0.7284003243338463,
+      0.8771124271137026
+    ],
+    "p_DeLong_vs_XGBoost": 0.9267758203803762
+  }
+}
